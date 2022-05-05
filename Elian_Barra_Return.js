@@ -11,9 +11,9 @@ function hello() {
 }
 var result = hello();
 console.log('result is', result);
-*/
+
 		Variables 	=	Datos
-		Result= Hello   =	'Hello''result is',15
+		Result= Hello   =	Hello 'Result is' ,15
 /*
 
 function numPlus(num) {
@@ -27,7 +27,7 @@ console.log('result is', result);
 
  */       
 		Variables	=	Datos
-                Var result      =     Result is,num, 15
+                var result      =     "Result is",num,(15)
 /*
 
 
@@ -150,3 +150,4 @@ console.log('result is', result);
 		Variables	=	Datos
 		Var sum		=  	5,3,6,3,5,8
 		Var Result	=	Result is 19
+        */
