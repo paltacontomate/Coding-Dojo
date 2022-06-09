@@ -1,0 +1,151 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>Juego Goku </title>
+</head>
+<body>
+    <style type="text/css">
+
+        #namek {
+            background-image: url("namek.jpg");
+            width: 800px;
+            height: 600px;
+            
+        }
+
+        .barragoku {
+            background-image: url("barravidagoku.png");
+            width: 185px;
+            height: 30px;
+            position: absolute;
+            
+        }
+
+        .goku {
+            background-image: url("goku.png");
+            width: 40px;
+            height: 62px;
+            position: absolute;
+            
+        }
+        .cell {
+            background-image: url("minicell.png");
+            width: 45px;
+            height: 55px;
+            position: absolute;
+            
+        }
+        .barracell {
+            background-image: url("barravidaminicell.png");
+            width: 185px;
+            height: 30px;
+            position: absolute;
+            
+        }
+        .cuadrogoku {
+            background-image: url("cuadrovidagoku.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            
+        }
+        .cuadrocell {
+            background-image: url("cuadrovidaminicell.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            
+        }
+        
+
+   </style>        
+   <div id="namek">
+        <div id="goku">
+             <div class="goku" style="left: 100px; top: 420px"></div>
+    </div>
+   <div id="barragoku"></div>
+            <div class="barragoku" style="left: 15px; top: 10px"></div>
+
+   <div id="barracell"></div>
+            <div class="barracell" style="left: 615px; top: 10px"></div>
+
+   <div id="cell">
+    <div class="cell" style="left: 700px; top: 420px"></div>
+
+    <div id="cuadrocell"></div>
+            <div class="cuadrocell" style="left: 615px; top: 10px"></div>
+
+    <div id="cuadrogoku"></div>
+            <div class="cuadrogoku" style="left: 10px; top: 10px"></div>
+
+   
+<div>
+
+  
+<script type="text/javascript">
+
+    var cell = {
+            left:700,
+            top: 420
+        }
+    var goku = {
+            left: 100,
+            top: 420
+        }
+    var kamehameha = []
+
+    function drawgoku() {
+            content = "<div class='goku' style='left: "+goku.left+"px; top: "+goku.top+"px'></div>";
+            document.getElementById("goku").innerHTML = content;
+        }
+        function drawminicell() {
+            content = "";
+            for(var i=0; i<minicell.length; i++) {
+                content += "<div class='minicell' style='left: "+minicell[i].left+"px; top: "+minicell[i].top+"px'></div>";
+            }
+            document.getElementById("minicell").innerHTML = content;
+        }
+ 
+        document.onkeydown = function(e) {
+            console.log(e);
+            if(e.keyCode == 37) {
+                if(goku.left > 0) {
+                    goku.left -= 10;
+                    direction = 'left';        
+                }
+            }
+            if(e.keyCode == 39) {
+                if(goku.left < 1180) {
+                    goku.left += 10;
+                    direction = 'right';
+                }
+            }
+            if(e.keyCode == 38) {
+                if(goku.top < 570) {
+                    goku.top -= 10;
+                    direction = 'top';
+        
+                }
+            }
+            if(e.keyCode == 40) {
+                if(goku.top < 625) {
+                    goku.top += 10;
+                    direction = 'down';
+
+                }
+            }
+            drawgoku();
+        }
+        
+        function gameLoop() {
+            moveminicell();
+            drawgoku();
+            drawminicell();
+            drawkamehameha();
+            setTimeout(gameLoop, 70);
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>
